@@ -1,0 +1,8 @@
+Engineer,Drone,Blastforge,Wall,Flame Animus,Tarsier,Shadowfang
+Engineer,2,0
+Drone,7,0
+
+Wall,2,0
+Shield Module,3,0
+Gunbot Forge,2,0
+Tough Fab,1,0

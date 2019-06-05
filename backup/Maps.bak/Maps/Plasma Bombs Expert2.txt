@@ -1,0 +1,8 @@
+Engineer,Drone,Animus,Tarsier,Immolite
+3,3,3,3,3,3,3,3
+3
+Engineer,2,0
+Drone,5,0
+Immolite,4,0
+Immolite,4,-1
+Animus,1,0

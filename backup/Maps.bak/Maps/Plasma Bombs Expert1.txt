@@ -1,0 +1,5 @@
+Engineer,Animus,Drone,Tarsier,Shadowfang,Perforator
+3,3,3
+3
+Engineer,2,0
+Drone,11,0

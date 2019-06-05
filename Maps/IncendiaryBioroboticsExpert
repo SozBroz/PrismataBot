@@ -1,0 +1,11 @@
+Engineer,Drone,Blastforge,Wall,FlameAnimus,Tarsier,Shadowfang
+-1,-1,-1,-1,-1,-1,-1
+Engineer,2,0
+Drone,7,0
+
+ToughFabricator,GunbotForge,Gunbot,Wall,ShieldModule,Steelsplitter
+0,0,0,0,0,0
+Wall,2,0
+ShieldModule,3,0
+GunbotForge,2,9
+ToughFabricator,1,0

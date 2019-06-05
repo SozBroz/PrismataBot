@@ -1,0 +1,19 @@
+Nitrocybe
+{'supply': 20, 'assignedBlocking': False, 'health': 1, 'name': 'Nitrocybe', 'buyCost': '1R', 'defaultBlocking': True, 'buildTime': 2, 'abilityScript': {'selfsac': True, 'receive': 'X'}}
+attribute: selfsac
+KeyError StartTurnScript
+attribute: selfsac
+temp: {'name': 'Nitrocybe', 'buyCost': '1R'}
+startTurnScript: ['\n\n\tdef startTurn(self):', '\n\t\tself.owner.blockers.append("self")']
+Pixie
+{'supply': 20, 'assignedBlocking': False, 'health': 1, 'name': 'Pixie', 'buyCost': '1B', 'defaultBlocking': False, 'buildTime': 1, 'abilityScript': {'selfsac': True, 'receive': 'X'}}
+attribute: selfsac
+KeyError StartTurnScript
+attribute: selfsac
+temp: {'name': 'Pixie', 'buyCost': '1B'}
+startTurnScript: ['\n\n\tdef startTurn(self):']
+Bloodrager
+{'supply': 10, 'startTurnScript': {'receive': 'XX'}, 'health': 2, 'name': 'Bloodrager', 'buyCost': '7RXXX', 'defaultBlocking': False, 'buildTime': 1}
+except KeyError at END
+i: Bloodrager
+temp: {'startTurnScript': {'receive': 'XX'}, 'health': 2, 'name': 'Bloodrager', 'buyCost': '7RXXX'}

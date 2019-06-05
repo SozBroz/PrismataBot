@@ -1,0 +1,6 @@
+Engineer,Drone,Animus,Shadowfang,Tarsier,Perforator,Immolite,Nitrocybe
+4,4,4,4,4
+3,3,3,3,3
+Engineer,2,0
+Drone,14,0
+Animus,3,0

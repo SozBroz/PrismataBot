@@ -1,0 +1,74 @@
+[I 17:57:54.701 NotebookApp] Writing notebook server cookie secret to /run/user/1000/jupyter/notebook_cookie_secret
+[I 17:57:55.098 NotebookApp] Serving notebooks from local directory: /home/Phil/Documents/Prismata
+[I 17:57:55.098 NotebookApp] 0 active kernels
+[I 17:57:55.098 NotebookApp] The Jupyter Notebook is running at:
+[I 17:57:55.098 NotebookApp] http://localhost:8888/?token=cb4c669fbf1d1da39117c76aeee0173a79ac335a03b20484
+[I 17:57:55.098 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 17:57:55.100 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=cb4c669fbf1d1da39117c76aeee0173a79ac335a03b20484&token=cb4c669fbf1d1da39117c76aeee0173a79ac335a03b20484
+[I 17:57:56.932 NotebookApp] Accepting one-time-token-authenticated connection from ::1
+[I 17:58:06.666 NotebookApp] Creating new notebook in 
+[I 17:58:08.093 NotebookApp] Kernel started: 4ca43eed-59d8-42bc-971c-7d04dae2c008
+[I 17:58:08.945 NotebookApp] Adapting to protocol v5.1 for kernel 4ca43eed-59d8-42bc-971c-7d04dae2c008
+[I 18:00:08.076 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:01:06.394 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:02:08.071 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:04:08.067 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:06:08.067 NotebookApp] Saving file at /Untitled.ipynb
+1528581986900	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+1528581987296	addons.update-checker	WARN	onUpdateCheckComplete failed to parse update manifest: [Exception... "Update manifest is missing a required addons property."  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://gre/modules/addons/AddonUpdateChecker.jsm :: getRequiredProperty :: line 473"  data: no] Stack trace: getRequiredProperty()@resource://gre/modules/addons/AddonUpdateChecker.jsm:473 < parseJSONManifest()@resource://gre/modules/addons/AddonUpdateChecker.jsm:483 < UpdateParser.prototype.onLoad/parser()@resource://gre/modules/addons/AddonUpdateChecker.jsm:655 < UpdateParser.prototype.onLoad()@resource://gre/modules/addons/AddonUpdateChecker.jsm:675 < UpdateParser/<()@resource://gre/modules/addons/AddonUpdateChecker.jsm:593
+1528581987304	addons.update-checker	WARN	onUpdateCheckComplete failed to parse update manifest: [Exception... "Update manifest is missing a required addons property."  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://gre/modules/addons/AddonUpdateChecker.jsm :: getRequiredProperty :: line 473"  data: no] Stack trace: getRequiredProperty()@resource://gre/modules/addons/AddonUpdateChecker.jsm:473 < parseJSONManifest()@resource://gre/modules/addons/AddonUpdateChecker.jsm:483 < UpdateParser.prototype.onLoad/parser()@resource://gre/modules/addons/AddonUpdateChecker.jsm:655 < UpdateParser.prototype.onLoad()@resource://gre/modules/addons/AddonUpdateChecker.jsm:675 < UpdateParser/<()@resource://gre/modules/addons/AddonUpdateChecker.jsm:593
+1528581987310	addons.update-checker	WARN	onUpdateCheckComplete failed to parse update manifest: [Exception... "Update manifest is missing a required addons property."  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://gre/modules/addons/AddonUpdateChecker.jsm :: getRequiredProperty :: line 473"  data: no] Stack trace: getRequiredProperty()@resource://gre/modules/addons/AddonUpdateChecker.jsm:473 < parseJSONManifest()@resource://gre/modules/addons/AddonUpdateChecker.jsm:483 < UpdateParser.prototype.onLoad/parser()@resource://gre/modules/addons/AddonUpdateChecker.jsm:655 < UpdateParser.prototype.onLoad()@resource://gre/modules/addons/AddonUpdateChecker.jsm:675 < UpdateParser/<()@resource://gre/modules/addons/AddonUpdateChecker.jsm:593
+1528581987338	addons.update-checker	WARN	onUpdateCheckComplete failed to parse update manifest: [Exception... "Update manifest is missing a required addons property."  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://gre/modules/addons/AddonUpdateChecker.jsm :: getRequiredProperty :: line 473"  data: no] Stack trace: getRequiredProperty()@resource://gre/modules/addons/AddonUpdateChecker.jsm:473 < parseJSONManifest()@resource://gre/modules/addons/AddonUpdateChecker.jsm:483 < UpdateParser.prototype.onLoad/parser()@resource://gre/modules/addons/AddonUpdateChecker.jsm:655 < UpdateParser.prototype.onLoad()@resource://gre/modules/addons/AddonUpdateChecker.jsm:675 < UpdateParser/<()@resource://gre/modules/addons/AddonUpdateChecker.jsm:593
+1528581987410	addons.update-checker	WARN	onUpdateCheckComplete failed to parse update manifest: [Exception... "Update manifest is missing a required addons property."  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://gre/modules/addons/AddonUpdateChecker.jsm :: getRequiredProperty :: line 473"  data: no] Stack trace: getRequiredProperty()@resource://gre/modules/addons/AddonUpdateChecker.jsm:473 < parseJSONManifest()@resource://gre/modules/addons/AddonUpdateChecker.jsm:483 < UpdateParser.prototype.onLoad/parser()@resource://gre/modules/addons/AddonUpdateChecker.jsm:655 < UpdateParser.prototype.onLoad()@resource://gre/modules/addons/AddonUpdateChecker.jsm:675 < UpdateParser/<()@resource://gre/modules/addons/AddonUpdateChecker.jsm:593
+1528581987416	addons.update-checker	WARN	onUpdateCheckComplete failed to parse update manifest: [Exception... "Update manifest is missing a required addons property."  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://gre/modules/addons/AddonUpdateChecker.jsm :: getRequiredProperty :: line 473"  data: no] Stack trace: getRequiredProperty()@resource://gre/modules/addons/AddonUpdateChecker.jsm:473 < parseJSONManifest()@resource://gre/modules/addons/AddonUpdateChecker.jsm:483 < UpdateParser.prototype.onLoad/parser()@resource://gre/modules/addons/AddonUpdateChecker.jsm:655 < UpdateParser.prototype.onLoad()@resource://gre/modules/addons/AddonUpdateChecker.jsm:675 < UpdateParser/<()@resource://gre/modules/addons/AddonUpdateChecker.jsm:593
+1528581987460	addons.update-checker	WARN	onUpdateCheckComplete failed to parse update manifest: [Exception... "Update manifest is missing a required addons property."  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://gre/modules/addons/AddonUpdateChecker.jsm :: getRequiredProperty :: line 473"  data: no] Stack trace: getRequiredProperty()@resource://gre/modules/addons/AddonUpdateChecker.jsm:473 < parseJSONManifest()@resource://gre/modules/addons/AddonUpdateChecker.jsm:483 < UpdateParser.prototype.onLoad/parser()@resource://gre/modules/addons/AddonUpdateChecker.jsm:655 < UpdateParser.prototype.onLoad()@resource://gre/modules/addons/AddonUpdateChecker.jsm:675 < UpdateParser/<()@resource://gre/modules/addons/AddonUpdateChecker.jsm:593
+[I 18:08:08.068 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:09:40.155 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:09:48.472 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:10:08.066 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:10:09.400 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:11:44.983 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:12:08.063 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:12:20.795 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:13:44.448 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:14:08.064 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:14:16.411 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:14:32.689 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:16:08.064 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:18:08.065 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:18:58.679 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:19:11.961 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:20:08.066 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:20:40.372 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:20:50.346 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:21:10.502 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:22:08.066 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:22:24.394 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:22:44.381 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:22:45.990 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:24:08.064 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:24:56.224 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:25:05.497 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:25:30.039 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:26:08.065 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:27:07.081 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:27:14.796 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:28:08.064 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:28:49.660 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:29:48.101 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:30:08.067 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:30:29.422 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:30:33.485 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:31:02.255 NotebookApp] Kernel interrupted: 4ca43eed-59d8-42bc-971c-7d04dae2c008
+[I 18:32:08.066 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:32:29.277 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:34:08.065 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:34:12.008 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:34:34.849 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:36:08.064 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:39:15.823 NotebookApp] Starting buffering for 4ca43eed-59d8-42bc-971c-7d04dae2c008:4b24916f04454b75891e5c8be8f65c44
+[I 18:39:20.869 NotebookApp] Adapting to protocol v5.1 for kernel 4ca43eed-59d8-42bc-971c-7d04dae2c008
