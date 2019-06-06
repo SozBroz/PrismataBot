@@ -4,6 +4,8 @@ unitDictionary={"Nitrocybe":{"supply":20,"assignedBlocking":False,"health":1,"na
 unitDictionary["GunbotForge"]={"supply":10,"buildTime":1,"buyCost":"G","health":4,"name":"Gunbot Forge","startTurnScript":{"create":[{"multiplicity":1,"name":"Gunbot","buildTime":1,"lifespan":-1}]}}
 unitDictionary["Gunbot"]={"supply":0,"buildTime":1,"buyCost":"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX","health":1,"name":"Gunbot","startTurnScript":{"receive":"X"}}
 unitDictionary["Tough Fabricator"]={"supply":0,"buildTime":1,"buyCost":"GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG","health":20,"name":"Tough Fabricator","startTurnScript":{"create":[{"multiplicity":1,"name":"Steelsplitter","buildTime":1,"lifespan":-1}]}}
+unitDictionary["Assembler"]={"supply":0,"buildTime":1,"buyCost":"GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG","health":4,"name":"Assembler","startTurnScript":{"create":[{"multiplicity":1,"name":"Steelsplitter","buildTime":1,"lifespan":-1}]}}
+unitDictionary["Litterbug"]={"supply":0,"health":1,"name":"Litterbug","buyCost":"GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG","buildTime":0}
 counter=0
 baseSetList=[]
 

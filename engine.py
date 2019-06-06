@@ -13,32 +13,32 @@ def importBaseUnits():
 	return(baseUnitsFile)
 
 def buyUnit(player,unit):
-		for resource in player.unitInfoDict[unit]["resDict"]:
-			player.resDict[resource]-=player.unitInfoDict[unit]["resDict"][resource]
-		
-		player.unitInfoDict[unit]["supply"]-=1
-		#print("unit Supply:",player.unitInfoDict[unit]["supply"])
-		exec(("player.masterUnitList.append("+unit+"(player))"))
-		if unitInfoDict[unit]["onClickSpell"]==True:
-			player.unitsWithOnClickList.append(player.masterUnitList[-1])
+	for resource in player.unitInfoDict[unit]["resDict"]:
+		player.resDict[resource]-=player.unitInfoDict[unit]["resDict"][resource]
+	
+	player.unitInfoDict[unit]["supply"]-=1
+	#print("unit Supply:",player.unitInfoDict[unit]["supply"])
+	exec(("player.masterUnitList.append("+unit+"(player))"))
+	if unitInfoDict[unit]["onClickSpell"]==True:
+		player.unitsWithOnClickList.append(player.masterUnitList[-1])
 
-		try:
-			if player.masterUnitList[-1].defaultBlocking:
-				player.resDict['defence']+=player.masterUnitList[-1].health
-				player.blockers.append(player.masterUnitList[-1])
+	try:
+		if player.masterUnitList[-1].defaultBlocking:
+			player.resDict['defence']+=player.masterUnitList[-1].health
+			player.blockers.append(player.masterUnitList[-1])
 
-		except AttributeError:
-			pass
+	except AttributeError:
+		pass
 
-		unitsToBeSacd=[]
-		for unitSac in unitInfoDict[unit]["unitSac"]:
-			for MULUnit in player.masterUnitList:
-				if str(MULUnit)==unitSac and MULUnit not in unitsToBeSacd:
-					unitsToBeSacd.append(MULUnit)
-					break
-		
-		for UTBSunit in unitsToBeSacd:
-			player.destroy(UTBSunit)
+	unitsToBeSacd=[]
+	for unitSac in unitInfoDict[unit]["unitSac"]:
+		for MULUnit in player.masterUnitList:
+			if str(MULUnit)==unitSac and MULUnit not in unitsToBeSacd:
+				unitsToBeSacd.append(MULUnit)
+				break
+	
+	for UTBSunit in unitsToBeSacd:
+		player.destroy(UTBSunit)
 
 def unitInfoDump(unit):
 	print("Unit Name:", str(unit))
@@ -470,8 +470,9 @@ def initializeRegularGame(player1,player2):
 
 	for temp in range(0,6):
 		player1.masterUnitList.append(Drone(player1))
-		player2.masterUnitList.append(Drone(player2))
 		player1.unitsWithOnClickList.append(player1.masterUnitList[-1])
+
+		player2.masterUnitList.append(Drone(player2))
 		player2.unitsWithOnClickList.append(player2.masterUnitList[-1])
 
 	player1.unitInfoDict["Drone"]["supply"]=21
@@ -489,70 +490,110 @@ silentTestingMode=False
 inputHistoryPlayer1=[]
 inputHistoryPlayer2=[]
 player1,player2=initializePlayers()
-unitInfoDict={}
+global unitInfoDict
+unitInfoDict = {}
 fullNameToCleanNameDict={}
 additionalUnits=[]
+initializedUnitsList=[]
 #if len(sys.argv)>=3:
 	#if "-s" in sys.argv: #silent mode for running script and comparing final output
 	#if "-d" in sys.argv: #Dump entry and exit of each function and all relevant variables
+if len(sys.argv) < 2 or sys.argv[1] != "-c":
+	print("-c < name of mission > to launch campaign mission from file in Maps folder")
+	exit(0)
 
 if sys.argv[1] == "-c":
 	from campaignSetUp import *
-	campaignFile=open("Maps/IncendiaryBioroboticsExpert")
+	print("Initializing from campaign file \"Maps/%s\"" % (sys.argv[2]))
+
+	campaignFile=open("Maps/" + sys.argv[2])
 	campaignFile=campaignFile.readlines()
 	player1UnitsThatCanBeBought,player1UnitsThatCanBeBoughtSupply,player1InitUnits,player2UnitsThatCanBeBought,player2UnitsThatCanBeBoughtSupply,player2InitUnits=organizeCampaignFile(campaignFile)
 	player1UnitsThatCanBeBought[-1]=player1UnitsThatCanBeBought[-1].strip()
 	sys.path.insert(0,'units/')
-
-	for index,unitToImport in enumerate(player1UnitsThatCanBeBought): #+additionalUnits
-		unitInfoDict[unitToImport]={}
-		temp={}
-		#print(unitToImport)
-		exec(("from "+unitToImport+" import *"))
-		exec(("resDict,onClickSpell,supply,unitSac,fullName="+unitToImport+"Cost()"))
-		unitInfoDict[unitToImport]["resDict"]=resDict
-		unitInfoDict[unitToImport]["onClickSpell"]=onClickSpell
-		#print(player1UnitsThatCanBeBoughtSupply[index])
-		unitInfoDict[unitToImport]["supply"]=player1UnitsThatCanBeBoughtSupply[index]
-		unitInfoDict[unitToImport]["unitSac"]=unitSac
-		unitInfoDict[unitToImport]["fullName"]=fullName
-		fullNameToCleanNameDict[fullName]=unitToImport
-	player1.unitInfoDict=copy.deepcopy(unitInfoDict)
-
-	for unitInfo in player1InitUnits:
-		unitInfo=unitInfo.split(",")
-		unitInfo[-1]=unitInfo[-1].strip()
-		for i in range(0,int(unitInfo[1])):
-			#print(unitInfo[0])
-			exec(("player1.masterUnitList.append("+unitInfo[0]+"(player1))"))
-			print(player1.masterUnitList[-1].cooldown)
-			player1.masterUnitList[-1].cooldown=int(unitInfo[-2])
+	print("Initializing units available to purchase by player one...")
+	if player1UnitsThatCanBeBought == [''] :	
+		player1UnitsThatCanBeBought = [];
+		print("player1 can buy no units...")
+	
+	else:
+		print("player1UnitsThatCanBeBought : ", '\n '.join(player1UnitsThatCanBeBought))
+		for index,unitToImport in enumerate(player1UnitsThatCanBeBought): #+additionalUnits
+			unitInfoDict[unitToImport]={}
+			temp={}
+			if index == 0:        
+        			print("Importing " + unitToImport)
+        			exec(( "from " + unitToImport + " import *" ))
+        			exec(("resDict,onClickSpell,supply,unitSac,fullName=" + unitToImport + "Cost()"))
+			unitInfoDict[unitToImport]["resDict"]=resDict
+			unitInfoDict[unitToImport]["onClickSpell"]=onClickSpell
+			#print(player1UnitsThatCanBeBoughtSupply[index])
+			unitInfoDict[unitToImport]["supply"]=player1UnitsThatCanBeBoughtSupply[index]
+			unitInfoDict[unitToImport]["unitSac"]=unitSac
+			unitInfoDict[unitToImport]["fullName"]=fullName
+			fullNameToCleanNameDict[fullName]=unitToImport		
+		player1.unitInfoDict=copy.deepcopy(unitInfoDict)
 
 
-	unitInfoDict={}
-	player2UnitsThatCanBeBought[-1]=player2UnitsThatCanBeBought[-1].strip()
-	for index,unitToImport in enumerate(player2UnitsThatCanBeBought): #+additionalUnits
-		unitInfoDict[unitToImport]={}
-		temp={}
-		#print(unitToImport)
-		exec(("from "+unitToImport+" import *"))
-		exec(("resDict,onClickSpell,supply,unitSac,fullName="+unitToImport+"Cost()"))
-		unitInfoDict[unitToImport]["resDict"]=resDict
-		unitInfoDict[unitToImport]["onClickSpell"]=onClickSpell
-		#print(player1UnitsThatCanBeBoughtSupply[index])
-		unitInfoDict[unitToImport]["supply"]=player2UnitsThatCanBeBoughtSupply[index]
-		unitInfoDict[unitToImport]["unitSac"]=unitSac
-		unitInfoDict[unitToImport]["fullName"]=fullName
-		fullNameToCleanNameDict[fullName]=unitToImport
-	player2.unitInfoDict=unitInfoDict
 
-	for unitInfo in player2InitUnits:
-		unitInfo=unitInfo.split(",")
-		unitInfo[-1]=unitInfo[-1].strip()
-		for i in range(0,int(unitInfo[1])):
-			print(unitInfo)
-			exec(("player2.masterUnitList.append("+unitInfo[0]+"(player2))"))
-			player2.masterUnitList[-1].cooldown=int(unitInfo[-2])
+	print("Initializing units allocated to player ones board...")
+	if player1InitUnits == ['\n'] :
+		player1InitUnits = []
+		print("player1 has no allocated units...")
+	else :
+		for unitInfo in player1InitUnits:
+			unitInfo=unitInfo.split(",")
+			unitInfo[-1]=unitInfo[-1].strip()
+			for i in range(0,int(unitInfo[1])):
+				if unitInfo[0] not in unitInfoDict:
+					print("Importing " + unitInfo[0])
+					exec(( "from " + unitInfo[0] + " import *" ))
+
+				exec(("player1.masterUnitList.append("+unitInfo[0]+"(player1))"))
+				player1.masterUnitList[-1].cooldown=int(unitInfo[-2])
+
+
+
+	print("Initializing units available to purchase by player two...")
+	if player2UnitsThatCanBeBought == ['\n'] :	
+		player2UnitsThatCanBeBought = [];
+		print("player2 can buy no units...")
+
+	else :
+		player2UnitsThatCanBeBought[-1]=player2UnitsThatCanBeBought[-1].strip()
+		for index,unitToImport in enumerate(player2UnitsThatCanBeBought): #+additionalUnits
+			print("player2UnitsThatCanBeBought : ", '\n '.join(player2UnitsThatCanBeBought))
+
+			unitInfoDict[unitToImport]={}
+			temp={}
+			#print(unitToImport)
+			print("Importing " + unitToImport)
+			exec(("from "+unitToImport+" import *"))
+			exec(("resDict,onClickSpell,supply,unitSac,fullName="+unitToImport+"Cost()"))
+			unitInfoDict[unitToImport]["resDict"]=resDict
+			unitInfoDict[unitToImport]["onClickSpell"]=onClickSpell
+			#print(player1UnitsThatCanBeBoughtSupply[index])
+			unitInfoDict[unitToImport]["supply"]=player2UnitsThatCanBeBoughtSupply[index]
+			unitInfoDict[unitToImport]["unitSac"]=unitSac
+			unitInfoDict[unitToImport]["fullName"]=fullName
+			fullNameToCleanNameDict[fullName]=unitToImport
+		player2.unitInfoDict=unitInfoDict
+     
+	print(player2InitUnits)
+	if player2InitUnits == [] :
+		player2InitUnits = []
+		print("player2 has no allocated units...")
+	else :
+		for unitInfo in player2InitUnits:
+			unitInfo=unitInfo.split(",")
+			unitInfo[-1]=unitInfo[-1].strip()
+			for i in range(0,int(unitInfo[1])):
+				if unitInfo[0] not in unitInfoDict:
+					print("Importing " + unitInfo[0])
+					exec(( "from " + unitInfo[0] + " import *" ))
+
+				exec(("player2.masterUnitList.append("+unitInfo[0]+"(player2))"))
+				player2.masterUnitList[-1].cooldown=int(unitInfo[-2])
 
 	playGame(player1,player2)
 	

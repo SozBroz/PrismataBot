@@ -19,6 +19,26 @@ class player:
 		self.unitInfoDict={}
 		self.fullNameToCleanNameDict={}
 
+	def addUnit(self,unit):
+		unit = unit.split(",")
+		print("Importing " + unit[0])
+		exec(("from " + unit[0] + " import *"))
+		if unit[0] not in self.unitInfoDict: 
+			exec(("resDict,onClickSpell,supply,unitSac,fullName="+unit[0]+"Cost()"))
+			self.unitInfoDict[unit[0]]["resDict"]=resDict
+			self.unitInfoDict[unit[0]]["onClickSpell"]=onClickSpell
+			#print(player1UnitsThatCanBeBoughtSupply[index])
+			self.unitInfoDict[unit[0]]["supply"]=supply
+			self.unitInfoDict[unit[0]]["unitSac"]=unitSac
+			self.unitInfoDict[unit[0]]["fullName"]=fullName
+			self.fullNameToCleanNameDict[fullName]=unit[0]
+
+		exec(("self.masterUnitList.append(" + unit[0] + "(player))"))
+		self.masterUnitList[-1].cooldown = unit[1]
+		self.masterUnitList[-1].lifespan = unit[2]
+		if ( self.masterUnitList[-1].canClick() ):
+			self.unitsWithOnClickList.append(self.masterUnitList[-1])
+
 	def startTurn(self):
 		self.resDict['attack']=0
 		for unit in self.masterUnitList:

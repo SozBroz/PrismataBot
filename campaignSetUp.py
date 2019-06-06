@@ -1,7 +1,7 @@
 #!/usr/bin/python3.6
 
 def organizeCampaignFile(fileContents):
-
+	#print(fileContents)    
 	player1UnitsThatCanBeBought=fileContents[0]
 	player1UnitsThatCanBeBoughtSupply=fileContents[1]
 	player1InitUnits=[]
@@ -13,16 +13,17 @@ def organizeCampaignFile(fileContents):
 		#print(fileContents[i])
 
 		if fileContents[i] == "\n":
-			player2BeginsAt=i+1
+			player2BeginsAt=i
 			break
-
+		
 		player1InitUnits.append(fileContents[i])
 		
 
 	#Initializing Player two Part of the file
 	player2InitUnits=[]
 	player2UnitsThatCanBeBought=fileContents[player2BeginsAt]
-	player2UnitsThatCanBeBoughtSupply=fileContents[player2BeginsAt+1]	
+	player2UnitsThatCanBeBoughtSupply=fileContents[player2BeginsAt+1]
+	#print("player2BeginsAt: ", player2BeginsAt)    
 	for i in range(player2BeginsAt+2,fileContentslen):
 		if fileContents[i]!="":
 			player2InitUnits.append(fileContents[i])
